@@ -5,7 +5,7 @@ Principle Investigator:	Lt Col Kyle Fitch, Air Force Istitute of Technology
 Intern:	Chance Starr, University at Buffalo
 
 # How to Use
-Please see this github's wiki page for a complete description of the project.
+Please see this github's wiki page for a complete description of the project: https://github.com/fitch09/Arctic_cloud_RTM/wiki
 
 ## To Download Files
 
