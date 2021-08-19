@@ -30,8 +30,8 @@ Open a terminal on your computer inside the github directory folder that you clo
 # Files Contained in this Repository and How to use them.
 
 ## Software you need to install for main program
-1) MCARaTS https://sites.google.com/site/mcarats/download
-2) GrADS http://cola.gmu.edu/grads/downloads.php
+1) MCARaTS Version 10 (Very important, NOT Version 9.  At the time this code was written, Version 10.0.3 was used.) https://sites.google.com/site/mcarats/download
+2) GrADS (At the time this code was written, Version 2.2.1 was used.) http://cola.gmu.edu/grads/downloads.php
 
 ## Software you need to install for phase function mie program to run
 3) libradtran http://www.libradtran.org/doku.php?id=download
