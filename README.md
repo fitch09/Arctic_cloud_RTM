@@ -27,7 +27,7 @@ Now, you may go down to the 'Files Contained in this Repository and How to use t
 
 Open a terminal on your computer inside the github directory folder that you clone'd in above, and type the following lines in, clicking enter after each, in the order listed below:
 
-# Files Contained in this Repository and How to use them.
+# Software Necessary to run and edit these files.
 
 ## Software you need to install for main program
 1) MCARaTS Version 10 (Very important, NOT Version 9.  At the time this code was written, Version 10.0.3 was used.) https://sites.google.com/site/mcarats/download
@@ -36,6 +36,32 @@ Open a terminal on your computer inside the github directory folder that you clo
 ## Software you need to install for phase function mie program to run
 3) libradtran http://www.libradtran.org/doku.php?id=download
 4) ifort (fortran installer) https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/fortran-compiler.html#gs.9cilhc
+
+## Software necessary to edit these files
+A terminal text editor is required to run these files.  I prefer emacs myself: https://www.gnu.org/software/emacs/download.html
+
+### To edit a file type the following command:
+
+emacs FILENAME
+
+Example: emacs WaterV2.conf
+
+### To create a new blank file in emacs:
+
+emacs NEWFILENAME_ThatDoesntExist_rememberToAddFileExtention
+
+Example: emacs HellowWorld.txt
+
+File Extensions are endless, for mcarats files use .conf for main program after your file name, for text files use .txt, etc.
+
+### Basic Emacs Commands:
+
+Save: Ctrl + x followed by Ctrl + s
+
+Exit: Ctrl + x followed by Ctrl + c
+
+# Files Contained in this Repository and How to use them.
+
 
 
 
