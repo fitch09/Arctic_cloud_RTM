@@ -98,11 +98,11 @@ emacs phaseFunction.sca
 
 Place these lines of code at the top:
 
-%mdlphs
-# a comment line
-1801  # naa (# of angles)
-1801  # np (# of P data)
-# ang, phs for ipf=1
+                        %mdlphs
+'                       # a comment line
+                        1801  # naa (# of angles)
+                        1801  # np (# of P data)
+'                        # ang, phs for ipf=1
 
 After this, save and close the file.  If you are putting mupltiple phase functions in the same file, place just this line in front of the second phase function: # ang, phs for ipf=2 and so forth.
 
