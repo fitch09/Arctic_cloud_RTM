@@ -62,7 +62,51 @@ Exit: Ctrl + x followed by Ctrl + c
 
 # Files Contained in this Repository and How to use them.
 
+## Phase Function Folder
 
+The program mie.inp is the first step to generating the phase functions.  Take all the files contained in this folder and located where you installed libradtran.  Place all these files in the folder libRadtran-2.0.4/bin.  This will make running them possible.  If duplicate files exist, rewrite it with the one in this github.
+
+### To Run
+
+emacs mie.inp
+
+See where it says refrac, place either the word water or the word ice after it for each refractive index respectivly.  Where it says r_eff place the particle size you wish to use in micrometers directly after, file is preset to 10 micrometer particles.  You may also specify the wavelength, which is also preset in the contained file for the oxygen A-band wavelength of 763.
+
+Save the mie.inp file and exit to return to the command line in the folder this file is contained in.  Run the following lines of code in order:
+
+./mie < mie.inp > mie.out
+./phase -c -d -s 0.1 mie.out > phase.dat
+
+Now you have the phase functions for the water and ice clouds respectivly.  However, they contain an extra center column that should not be fed into Mcarats.  I have included two programs that will help get this file into the proper format, but the user is free to invent there own methods to do this.  Hand editing is not a real option however as each phase function contains 1801 entries.
+
+The matlab file phase.m contains the following lines of code to edit out the middle column:
+phase = readmatrix('phase.dat');
+plot(phase(:,1),phase(:,3))
+T = table(phase(:,1), phase(:,3))
+writetable(T, 'phaseFunction.txt')
+
+The C++ program FixPhaseFunctions.cpp takes the output file of the matlab program phaseFunction.txt and turns the commas into two spaces to be used in the Fortran language Mcarats software, outputing phaseFunction.sca, to match the example .sca file included with Mcarats.
+
+To run the c++ program on the output of the matlab program, ensure they are in a folder together and run the following lines of code:
+
+g++ FixPhaseFunction.cpp -o FixPhase.out
+./FixPhase.out
+
+Now you will have a file named phaseFunction.sca.  The final step is to place a few lines of code at the vary top of the file: 
+
+emacs phaseFunction.sca
+
+Place these lines of code at the top:
+
+%mdlphs
+# a comment line
+1801  # naa (# of angles)
+1801  # np (# of P data)
+# ang, phs for ipf=1
+
+After this, save and close the file.  If you are putting mupltiple phase functions in the same file, place just this line in front of the second phase function: # ang, phs for ipf=2 and so forth.
+
+## Mcarats Folder
 
 
 
