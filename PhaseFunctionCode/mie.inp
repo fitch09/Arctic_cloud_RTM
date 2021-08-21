@@ -1,0 +1,8 @@
+mie_program MIEV0     # use Mie program MIEV0 by Wiscombe
+refrac water          # use refractive index of water
+r_eff 10              # Specify effective radius 
+wavelength 763 763    # Specify wavelength
+nmom 1000             # Number of Legendre polynomials to be calculated 
+distribution GAMMA 7  # Specify gamma distribution with veff=1/(GAMMA+3)
+ 
+output_user pmom      # Output Legendre polynomials
