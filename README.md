@@ -41,7 +41,7 @@ Now, you may go down to the 'Files Contained in this Repository and How to use t
 
 Open a terminal on your computer inside the github directory folder that you clone'd in above, and type the following lines in, clicking enter after each, in the order listed below to push to the main branch:
 
-**NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!
+**NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!**
 
 git add *
 
@@ -49,7 +49,7 @@ git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
 
 git push origin main
 
-**NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:
+**NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:**
 
 git checkout -b NewBranchName
 
@@ -133,12 +133,12 @@ Now you will have a file named phaseFunction.sca.  The final step is to place a 
 emacs phaseFunction.sca
 
 Place these lines of code at the top:
-"
+
             
             %mdlphs
             # a comment line
             1801  # naa (# of angles)
             1801  # np (# of P data)
             # ang, phs for ipf=1
-"
+
 After this, save and close the file.  If you are putting mupltiple phase functions in the same file, place just this line in front of the second phase function: # ang, phs for ipf=2 and so forth.
