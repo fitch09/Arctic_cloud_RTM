@@ -4,6 +4,20 @@ Principle Investigator:	Lt Col Kyle Fitch, Air Force Istitute of Technology
 
 Intern:	Chance Starr, University at Buffalo
 
+## This github has the following components:
+
+Code - Downloadable files, see this README.md for how to use. https://github.com/fitch09/Arctic_cloud_RTM
+
+README.md - A guide to downloading the files, pushing to this github, software neccessary to run and edit these files, a complete list of all files contained in the code section as well as what they do and how to use them. https://github.com/fitch09/Arctic_cloud_RTM/blob/main/README.md
+
+Wiki - An article about the motivation and goals of this project, the methodology, as well as the current model specs with notes for what the final model will contain. https://github.com/fitch09/Arctic_cloud_RTM/wiki
+
+Milestones - A list of stages that should be completed in order to keep track of the route we are taking to complete this project.  https://github.com/fitch09/Arctic_cloud_RTM/milestones
+
+Issues - Current issues with the project that need to be fixed for the final publication.  Issues are tied into the stages and all have a stage number, see milestones to decide the order to work on each issue.  https://github.com/fitch09/Arctic_cloud_RTM/issues
+
+
+
 # How to download and push this repository.
 Please see this github's wiki page for a complete description of the project: https://github.com/fitch09/Arctic_cloud_RTM/wiki
 
@@ -62,6 +76,10 @@ Exit: Ctrl + x followed by Ctrl + c
 
 # Files Contained in this Repository and How to use them.
 
+## Mcarats Folder
+
+
+
 ## Phase Function Folder
 
 The program mie.inp is the first step to generating the phase functions.  Take all the files contained in this folder and located where you installed libradtran.  Place all these files in the folder libRadtran-2.0.4/bin.  This will make running them possible.  If duplicate files exist, rewrite it with the one in this github.
@@ -106,8 +124,3 @@ Place these lines of code at the top:
             # ang, phs for ipf=1
 "
 After this, save and close the file.  If you are putting mupltiple phase functions in the same file, place just this line in front of the second phase function: # ang, phs for ipf=2 and so forth.
-
-## Mcarats Folder
-
-
-
