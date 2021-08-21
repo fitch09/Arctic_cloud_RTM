@@ -41,7 +41,7 @@ Now, you may go down to the 'Files Contained in this Repository and How to use t
 
 Open a terminal on your computer inside the github directory folder that you clone'd in above, and type the following lines in, clicking enter after each, in the order listed below to push to the main branch:
 
-NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!
+**NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!
 
 git add *
 
@@ -49,7 +49,7 @@ git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
 
 git push origin main
 
-NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:
+**NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:
 
 git checkout -b NewBranchName
 
