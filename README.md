@@ -25,13 +25,13 @@ Please see this github's wiki page for a complete description of the project: ht
 
 Open a terminal on your computer and type the following line in, and click enter:
 
-git clone https://github.com/fitch09/Arctic_cloud_RTM.git
+            git clone https://github.com/fitch09/Arctic_cloud_RTM.git
 
 Now you have this github repository downloaded onto you computer!  If you see an error message, make sure you are hooked up to the internet.  This is not the only thing that can go wrong, but it is the most common!
 
 Now, type the following command into the terminal, pressing enter after:
 
-cd Arctic_cloud_RTM
+            cd Arctic_cloud_RTM
 
 Now you are inside the folder you just downloaded!  Type the following command to see all the folders you now have access to: ls
 
@@ -43,21 +43,16 @@ Open a terminal on your computer inside the github directory folder that you clo
 
 **NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!**
 
-git add *
-
-git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
-
-git push origin main
+            git add *
+            git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+            git push origin main
 
 **NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:**
 
-git checkout -b NewBranchName
-
-git add *
-
-git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
-
-git push origin NewBranchName
+            git checkout -b NewBranchName
+            git add *
+            git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+            git push origin NewBranchName
 
 # Software Necessary to run and edit these files.
 
@@ -74,13 +69,13 @@ A terminal text editor is required to run these files.  I prefer emacs myself: h
 
 ### To edit a file type the following command:
 
-emacs FILENAME
+            emacs FILENAME
 
 Example: emacs WaterV2.conf
 
 ### To create a new blank file in emacs:
 
-emacs NEWFILENAME_ThatDoesntExist_rememberToAddFileExtention
+            emacs NEWFILENAME_ThatDoesntExist_rememberToAddFileExtention
 
 Example: emacs HellowWorld.txt
 
@@ -104,33 +99,34 @@ The program mie.inp is the first step to generating the phase functions.  Take a
 
 ### To run and set up for Mcarats software
 
-emacs mie.inp
+            emacs mie.inp
 
 See where it says refrac, place either the word water or the word ice after it for each refractive index respectivly.  Where it says r_eff place the particle size you wish to use in micrometers directly after, file is preset to 10 micrometer particles.  You may also specify the wavelength, which is also preset in the contained file for the oxygen A-band wavelength of 763.
 
 Save the mie.inp file and exit to return to the command line in the folder this file is contained in.  Run the following lines of code in order:
 
-./mie < mie.inp > mie.out
-./phase -c -d -s 0.1 mie.out > phase.dat
+            ./mie < mie.inp > mie.out
+            ./phase -c -d -s 0.1 mie.out > phase.dat
 
 Now you have the phase functions for the water and ice clouds respectivly.  However, they contain an extra center column that should not be fed into Mcarats.  I have included two programs that will help get this file into the proper format, but the user is free to invent there own methods to do this.  Hand editing is not a real option however as each phase function contains 1801 entries.
 
 The matlab file phase.m contains the following lines of code to edit out the middle column:
-phase = readmatrix('phase.dat');
-plot(phase(:,1),phase(:,3))
-T = table(phase(:,1), phase(:,3))
-writetable(T, 'phaseFunction.txt')
+
+            phase = readmatrix('phase.dat');
+            plot(phase(:,1),phase(:,3))
+            T = table(phase(:,1), phase(:,3))
+            writetable(T, 'phaseFunction.txt')
 
 The C++ program FixPhaseFunctions.cpp takes the output file of the matlab program phaseFunction.txt and turns the commas into two spaces to be used in the Fortran language Mcarats software, outputing phaseFunction.sca, to match the example .sca file included with Mcarats.
 
 To run the c++ program on the output of the matlab program, ensure they are in a folder together and run the following lines of code:
 
-g++ FixPhaseFunction.cpp -o FixPhase.out
-./FixPhase.out
+            g++ FixPhaseFunction.cpp -o FixPhase.out
+            ./FixPhase.out
 
 Now you will have a file named phaseFunction.sca.  The final step is to place a few lines of code at the vary top of the file: 
 
-emacs phaseFunction.sca
+            emacs phaseFunction.sca
 
 Place these lines of code at the top:
 
