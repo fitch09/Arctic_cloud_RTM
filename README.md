@@ -16,8 +16,6 @@ Milestones - A list of stages that should be completed in order to keep track of
 
 Issues - Current issues with the project that need to be fixed for the final publication.  Issues are tied into the stages and all have a stage number, see milestones to decide the order to work on each issue.  https://github.com/fitch09/Arctic_cloud_RTM/issues
 
-
-
 # How to download and push this repository.
 Please see this github's wiki page for a complete description of the project: https://github.com/fitch09/Arctic_cloud_RTM/wiki
 
@@ -91,11 +89,33 @@ Exit: Ctrl + x followed by Ctrl + c
 
 ## Mcarats Folder
 
+The main program is contained in WaterCloudModel.conf, and phaseFunctionWaterIce10mu.sca is the phase function file which must always be in the same folder as the main program WaterCloudModel.conf.  An example output file generated from this code is WaterCloudModel.ctl.  mcarats is the executable file for the mcarats software.  
 
+I'm not sure if the mcarats executable is machine dependent, thus if you run into issues while runing the main program, simply find the mcarats executable on yout machine from your mcarats download and either place it in this github folder located on your machine, or place the files located in this github folder into the same folder as the mcarats executable.
 
+## Runing the main program
+
+To run the main program WaterCloudModel.conf, go to the folder containing these files and enter the following command:
+
+            ./mcarats 1e5 0 WaterCloudModel.conf WaterCloudModel
+
+The first term of the above line of code, ./mcarats is the computer file path to the mcarats executable.
+
+The second term, 1e5, is the number of photon particles to use for this run.  This number largly decides the speed of the program, and at 1e5 the current program will run for ~295 seconds on my machine.
+
+The fourth term, WaterCloudModel.conf, is the full file name of the mcarats main program file input.
+
+The fifth term, WaterCloudModel, is the name you would like of the output file.  The output file, once the run is completed, will have the file extention of .ctl, so in this case it will be called WaterCloudModel.ctl.
+
+To edit the main program WaterCloudModel.conf, type:
+
+            emacs WaterCloudModel.conf
+            
+Upon opening the main program WaterCloudModel.conf, you will see alot of comments on the code, this is to make editing and tweaking the variables easier.  For a full description of each variable, please see sections 4a-4d of the Mcarats Version 10 User Manual: https://sites.google.com/site/mcarats/mcarats-user-s-guide-version-0-10
+            
 ## Phase Function Folder
 
-The program mie.inp is the first step to generating the phase functions.  Take all the files contained in this folder and located where you installed libradtran.  Place all these files in the folder libRadtran-2.0.4/bin.  This will make running them possible.  If duplicate files exist, rewrite it with the one in this github.
+The program mie.inp is the first step to generating the phase functions.  Take all the files contained in this folder and located where you installed libradtran.  Place all these files in the folder libRadtran-2.0.4/bin.  This will make running them possible.  If duplicate files exist, rewrite it with the one in this github.  An example run of this program can be found at the folowing site: https://www.meteo.physik.uni-muenchen.de/~emde/doku.php?id=teaching:radiative_transfer:mie_phase
 
 ### To run and set up for Mcarats software
 
