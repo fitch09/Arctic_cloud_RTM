@@ -44,14 +44,19 @@ Open a terminal on your computer inside the github directory folder that you clo
 NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!
 
 git add *
+
 git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+
 git push origin main
 
 NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:
 
 git checkout -b NewBranchName
+
 git add *
+
 git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+
 git push origin NewBranchName
 
 # Software Necessary to run and edit these files.
