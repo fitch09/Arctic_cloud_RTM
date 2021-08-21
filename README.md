@@ -39,7 +39,20 @@ Now, you may go down to the 'Files Contained in this Repository and How to use t
 
 ## To Push to this Github Repository
 
-Open a terminal on your computer inside the github directory folder that you clone'd in above, and type the following lines in, clicking enter after each, in the order listed below:
+Open a terminal on your computer inside the github directory folder that you clone'd in above, and type the following lines in, clicking enter after each, in the order listed below to push to the main branch:
+
+NOTE: The following three lines of code are ONLY recommended if you are adding completely new files, NOT editing existing ones!
+
+git add *
+git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+git push origin main
+
+NOTE: If you fear your push will break existing code, use the following commands instead to create a new branch:
+
+git checkout -b NewBranchName
+git add *
+git commit -m "SHORT MESSAGE, WILL APPEAR ON GITHUB"
+git push origin NewBranchName
 
 # Software Necessary to run and edit these files.
 
@@ -84,7 +97,7 @@ Exit: Ctrl + x followed by Ctrl + c
 
 The program mie.inp is the first step to generating the phase functions.  Take all the files contained in this folder and located where you installed libradtran.  Place all these files in the folder libRadtran-2.0.4/bin.  This will make running them possible.  If duplicate files exist, rewrite it with the one in this github.
 
-### To Run
+### To run and set up for Mcarats software
 
 emacs mie.inp
 
